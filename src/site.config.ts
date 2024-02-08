@@ -3,11 +3,11 @@ import type { AstroExpressiveCodeOptions } from "astro-expressive-code";
 
 export const siteConfig: SiteConfig = {
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
-	author: "Chris Williams",
+	author: "Jia",
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
-	title: "Astro Theme Cactus",
+	title: "Jia 的博客",
 	// Meta property used as the default description meta property
-	description: "An opinionated starter theme for Astro",
+	description: "一枚小前端的记录",
 	// HTML lang property, found in src/layouts/Base.astro L:18
 	lang: "zh-CN",
 	// Meta property, found in src/components/BaseHead.astro L:42
@@ -29,15 +29,15 @@ export const siteConfig: SiteConfig = {
 // Used to generate links in both the Header & Footer.
 export const menuLinks: Array<{ title: string; path: string }> = [
 	{
-		title: "Home",
+		title: "主页",
 		path: "/",
 	},
 	{
-		title: "About",
+		title: "关于",
 		path: "/about/",
 	},
 	{
-		title: "Blog",
+		title: "博文",
 		path: "/posts/",
 	},
 ];

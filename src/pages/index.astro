@@ -52,18 +52,18 @@ const cactusTech: Array<{ title: string; desc: string; href: string }> = [
 ];
 ---
 
-<PageLayout meta={{ title: "Home" }}>
+<PageLayout meta={{ title: "主页" }}>
 	<section>
-		<h1 class="title mb-6 font-zpix">Hello World!</h1>
-		<p class="mb-4 font-zpix">
-			Hi, I’m a theme for Astro, an example of how you can use this starter to create a personal
-			blog. If you want to know more about how you can customise me, add more posts, and make it
-			your own, click on the github icon link below and it will take you to my repo.
-		</p>
+		<h1 class="title mb-6">Hi! 你好！</h1>
+    <p class="mb-4">
+      朋友，你好！欢迎你发现这个小小的博客，首先做个自我介绍。我是一枚小前端，在我的博客中我会努力记录我在学习、
+      工作以及业余活动中遇到的问题，不论技术、生活等等等。我希望如果你在浏览内容的过程中发现有错误的地方，麻烦
+      您可以通过邮件联系我，我会在看到邮件的第一时间调整。最后，非常感谢你能光顾我这个小小的角落。
+    </p>
 		<SocialList />
 	</section>
 	<section aria-label="Blog post list" class="mt-16">
-		<h2 class="title mb-4 text-xl">Posts</h2>
+		<h2 class="title mb-4 text-xl">博文</h2>
 		<ul class="space-y-4">
 			{
 				allPostsByDate.map((p) => (
@@ -74,24 +74,24 @@ const cactusTech: Array<{ title: string; desc: string; href: string }> = [
 			}
 		</ul>
 	</section>
-	<section class="mt-16">
-		<h2 class="title mb-4 text-xl">Technologies</h2>
-		<dl class="space-y-4">
-			{
-				cactusTech.map(({ href, title, desc }) => (
-					<div class="flex flex-col gap-2 md:flex-row">
-						<dt>
-							<span class="flex">
-								<a href={href} target="_blank" rel="noopener noreferrer" class="cactus-link">
-									{title}
-								</a>
-								:
-							</span>
-						</dt>
-						<dd>{desc}</dd>
-					</div>
-				))
-			}
-		</dl>
-	</section>
+	<!--<section class="mt-16">-->
+	<!--	<h2 class="title mb-4 text-xl">技术</h2>-->
+	<!--	<dl class="space-y-4">-->
+	<!--		{-->
+	<!--			cactusTech.map(({ href, title, desc }) => (-->
+	<!--				<div class="flex flex-col gap-2 md:flex-row">-->
+	<!--					<dt>-->
+	<!--						<span class="flex">-->
+	<!--							<a href={href} target="_blank" rel="noopener noreferrer" class="cactus-link">-->
+	<!--								{title}-->
+	<!--							</a>-->
+	<!--							:-->
+	<!--						</span>-->
+	<!--					</dt>-->
+	<!--					<dd>{desc}</dd>-->
+	<!--				</div>-->
+	<!--			))-->
+	<!--		}-->
+	<!--	</dl>-->
+	<!--</section>-->
 </PageLayout>

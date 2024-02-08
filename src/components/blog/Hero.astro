@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import FormattedDate from "../FormattedDate.astro";
 
@@ -31,19 +30,20 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 		</div>
 	)
 }
-{data.draft ? <span class="text-base text-red-500">(Draft)</span> : null}
+{data.draft ? <span class="text-base text-red-500"><草稿></span> : null}
 <h1 class="title mb-3 sm:mb-1">
 	{data.title}
 </h1>
 <div class="flex flex-wrap items-center gap-x-3 gap-y-2">
 	<p class="font-semibold">
 		<FormattedDate date={data.publishDate} dateTimeOptions={dateTimeOptions} /> /{" "}
-		{remarkPluginFrontmatter.minutesRead}
+		{remarkPluginFrontmatter.raw.words} 字 /{" "}
+    {Math.ceil(remarkPluginFrontmatter.raw.minutes)} 分钟
 	</p>
 	{
 		data.updatedDate && (
 			<span class="rounded-lg bg-quote/10 p-1 text-quote">
-				Last Updated:
+				上次更新:
 				<FormattedDate class="ms-1" date={data.updatedDate} dateTimeOptions={dateTimeOptions} />
 			</span>
 		)
