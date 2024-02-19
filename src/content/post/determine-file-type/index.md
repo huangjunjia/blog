@@ -3,7 +3,7 @@ title: "如何判断当前上传文件的类型"
 description: "通过文件拓展名和MIME类型判断上传文件类型不可靠。使用\"Magic number\"，即文件的特定字节码，可以准确判断文件类型。通过读取文件的字节码并与已知类型的字节码进行比对，可以在浏览器中实现准确的文件类型判断。"
 publishDate: "2024/02/08"
 updatedDate: "2024/02/08"
-tags: ["前端"]
+tags: ["前端", "JavaScript"]
 ---
 
 ## 背景
@@ -211,9 +211,9 @@ switch (header) {
 
 ## Demo
 
-[Parse file type](https://codepen.io/huangjunjia/pen/YzYNbwd?editors=1011)
-
 ![Image.png](./image01.png)
 
-[ExpmQQW](https://codepen.io/daisy-zly/pen/ExpmQQW)
+[Codepen - Parse file type](https://codepen.io/huangjunjia/pen/YzYNbwd?editors=1011)
+
+[Codepen - ExpmQQW](https://codepen.io/daisy-zly/pen/ExpmQQW)
 
