@@ -1,6 +1,7 @@
 ---
 title: "如何判断当前上传文件的类型"
-description: "通过文件拓展名和MIME类型判断上传文件类型不可靠。使用\"Magic number\"，即文件的特定字节码，可以准确判断文件类型。通过读取文件的字节码并与已知类型的字节码进行比对，可以在浏览器中实现准确的文件类型判断。"
+description: "通过文件拓展名和MIME类型判断上传文件类型不可靠。使用\"Magic
+number\"，即文件的特定字节码，可以准确判断文件类型。通过读取文件的字节码并与已知类型的字节码进行比对，可以在浏览器中实现准确的文件类型判断。"
 publishDate: "2024/02/08"
 updatedDate: "2024/02/08"
 tags: ["前端", "JavaScript"]
@@ -14,7 +15,7 @@ tags: ["前端", "JavaScript"]
 
 1. 使用 el-upload 组件的返回的 File 对象，是通过 `input[type="file"]` 文件选择框的方式来读取文件信息
 
-```other
+```text
 uid: 1648106815740
 lastModified: 1647570422827
 lastModifiedDate: Fri Mar 18 2022 10:27:02 GMT+0800 (中国标准时间) {}
@@ -38,7 +39,10 @@ webkitRelativePath: ""
 
 在 MDN 中对 MIME 的介绍如下：
 
-> 媒体类型（通常称为 Multipurpose Internet Mail Extensions 或 MIME 类型 ）是一种标准， 用来表示文档、文件或字节流的性质和格式。 MIME类型不是传达文档类型信息的唯一方式： 1. 有时会使用名称后缀，特别是在Microsoft Windows系统上。并非所有的操作系统都认为这些后缀是有意义的 （特别是Linux和Mac OS），并且像外部MIME类型一样，不能保证它们是正确的。 2. 魔术数字。不同类型的文件的语法通过查看结构来允许文件类型推断。 例如，每个GIF文件以47 49 46 38十六进制值[GIF89]或89 50 4E 47 [.PNG]的PNG文件开头。 并非所有类型的文件都有幻数，所以这也不是100％可靠的方式。
+> 媒体类型（通常称为 Multipurpose Internet Mail Extensions 或 MIME 类型 ）是一种标准， 用来表示文档、文件或字节流的性质和格式。
+> MIME类型不是传达文档类型信息的唯一方式： 1. 有时会使用名称后缀，特别是在Microsoft Windows系统上。并非所有的操作系统都认为这些后缀是有意义的
+> （特别是Linux和Mac OS），并且像外部MIME类型一样，不能保证它们是正确的。 2. 魔术数字。不同类型的文件的语法通过查看结构来允许文件类型推断。
+> 例如，每个GIF文件以47 49 46 38十六进制值[GIF89]或89 50 4E 47 [.PNG]的PNG文件开头。 并非所有类型的文件都有幻数，所以这也不是100％可靠的方式。
 
 ## 浏览器获取的 MIME 类型并不可信
 
@@ -46,7 +50,7 @@ webkitRelativePath: ""
 
 1. 获取原图片（图片类型为 jpeg，文件拓展名为 jpeg）的元信息，此时可以看到 type 为 ::image/jpeg::
 
-```other
+```text
 uid: 1648106815740
 lastModified: 1647570422827
 lastModifiedDate: Fri Mar 18 2022 10:27:02 GMT+0800 (中国标准时间) {}
@@ -58,7 +62,7 @@ webkitRelativePath: ""
 
 1. 修改文件拓展名修改为jpg，此时文件元信息没有发生改变
 
-```other
+```text
 uid: 1648107134019
 lastModified: 1647570422827
 lastModifiedDate: Fri Mar 18 2022 10:27:02 GMT+0800 (中国标准时间) {}
@@ -70,7 +74,7 @@ webkitRelativePath: ""
 
 1. 将文件拓展名修改为 png 后，文件元信息发生了改变，type 修改为 ::image/png::
 
-```other
+```text
 uid: 1648107162025
 lastModified: 1647570422827
 lastModifiedDate: Fri Mar 18 2022 10:27:02 GMT+0800 (中国标准时间) {}
@@ -82,7 +86,7 @@ webkitRelativePath: ""
 
 4. 将文件拓展名修改为 gif 后，文件元信息发生了改变，type 修改为 ::image/gif::
 
-```other
+```text
 uid: 1648107204277
 lastModified: 1647570422827
 lastModifiedDate: Fri Mar 18 2022 10:27:02 GMT+0800 (中国标准时间) {}
@@ -94,7 +98,7 @@ webkitRelativePath: ""
 
 5. 移除文件拓展名，文件元信息发生了改变，type 为 空
 
-```other
+```text
 uid: 1648107237503
 lastModified: 1647570422827
 lastModifiedDate: Fri Mar 18 2022 10:27:02 GMT+0800 (中国标准时间) {}
@@ -108,7 +112,12 @@ webkitRelativePath: ""
 
 在 MDN 文档中对这一个[问题](https://developer.mozilla.org/en-US/docs/Web/API/File/type)进行了描述：
 
-> **Note:** Based on the current implementation, browsers won't actually read the bytestream of a file to determine its media type. It is assumed based on the file extension; a PNG image file renamed to .txt would give "*text/plain*" and not "*image/png*". Moreover, `file.type` is generally reliable only for common file types like images, HTML documents, audio and video. Uncommon file extensions would return an empty string. Client configuration (for instance, the Windows Registry) may result in unexpected values even for common types. **Developers are advised not to rely on this property as a sole validation scheme.**
+> **Note:** Based on the current implementation, browsers won't actually read the bytestream of a file to determine its
+> media type. It is assumed based on the file extension; a PNG image file renamed to .txt would give "*text/plain*" and
+> not "*image/png*". Moreover, `file.type` is generally reliable only for common file types like images, HTML documents,
+> audio and video. Uncommon file extensions would return an empty string. Client configuration (for instance, the Windows
+> Registry) may result in unexpected values even for common types. **Developers are advised not to rely on this property
+as a sole validation scheme.**
 
 在浏览器环境中通过 MIME 判断文件类型同样也并不是一个靠谱的方案。
 
@@ -122,9 +131,10 @@ webkitRelativePath: ""
 
 [Files types/kinds/formats | AP CSP (article) | Khan Academy](https://www.khanacademy.org/computing/computers-and-internet/xcae6f4a7ff015e7d:computers/xcae6f4a7ff015e7d:computer-files/a/file-types-kinds-extensions)
 
-计算机判断文件类型的方式很多，其中一种是文件的元数据的头部找到文件类型。比如 GIF 文件的元数据头部始终是字母 “GIF”，而根据 ACSII 编码转为二进制码后可以得到
+计算机判断文件类型的方式很多，其中一种是文件的元数据的头部找到文件类型。比如 GIF 文件的元数据头部始终是字母 “GIF”，而根据
+ACSII 编码转为二进制码后可以得到
 
-```other
+```text
 0100 0111 0100 1001 0100 0110
 ```
 
@@ -139,8 +149,10 @@ webkitRelativePath: ""
 在计算机编程中，`Magic number` 一词有多种含义。它可以指的是以下一种或多种情况：
 
 - 具有无法解释的意义或多次出现的独特值，可以（最好）用命名的常数来代替
-- 用于识别文件格式或协议的恒定数字或文本值；关于文件，见[文件签名列表](https://en.wikipedia.org/wiki/List_of_file_signatures)
-- 不太可能被误认为是其他含义的独特数值（例如，[全球唯一标识符](https://en.wikipedia.org/wiki/Universally_unique_identifier)）
+-
+用于识别文件格式或协议的恒定数字或文本值；关于文件，见[文件签名列表](https://en.wikipedia.org/wiki/List_of_file_signatures)
+-
+不太可能被误认为是其他含义的独特数值（例如，[全球唯一标识符](https://en.wikipedia.org/wiki/Universally_unique_identifier)）
 
 [List of file signatures - Wikipedia](https://en.wikipedia.org/wiki/List_of_file_signatures)
 
@@ -150,7 +162,7 @@ webkitRelativePath: ""
 
 以 JPEG 文件的字节码举例（前 4 个字节）：
 
-```other
+```text
 FF D8 FF E0 (SOI + ADD0)
 FF D8 FF E1 (SOI + ADD1)
 FF D8 FF E2 (SOI + ADD2)
@@ -164,8 +176,8 @@ var fileReader = new FileReader();
 fileReader.onloadend = function(e) {
   var arr = (new Uint8Array(e.target.result)).subarray(0, 4);
   var header = "";
-  for(var i = 0; i < arr.length; i++) {
-     header += arr[i].toString(16);
+  for (var i = 0; i < arr.length; i++) {
+    header += arr[i].toString(16);
   }
   console.log(header);
 
@@ -202,7 +214,8 @@ switch (header) {
 
 ## 特殊情况
 
-并不是所有类型都支持 Magic Number 判断，比如 Json 文件，Json 是一个格式规范而不是一个文件类型，Magic Number 无法保持固定值，所以需要使用其他方式判断，如：
+并不是所有类型都支持 Magic Number 判断，比如 Json 文件，Json 是一个格式规范而不是一个文件类型，Magic Number
+无法保持固定值，所以需要使用其他方式判断，如：
 
 1. 校验文件后缀
 2. 校验 Json schema 是否符合预期类型
@@ -211,9 +224,9 @@ switch (header) {
 
 ## Demo
 
-![Image.png](./image01.png)
-
-[Codepen - Parse file type](https://codepen.io/huangjunjia/pen/YzYNbwd?editors=1011)
-
-[Codepen - ExpmQQW](https://codepen.io/daisy-zly/pen/ExpmQQW)
-
+<p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="ExpmQQW" data-user="daisy-zly" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/daisy-zly/pen/ExpmQQW">
+  parse file type</a> by zhangliyuan (<a href="https://codepen.io/daisy-zly">@daisy-zly</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
