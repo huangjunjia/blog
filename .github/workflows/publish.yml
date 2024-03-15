@@ -31,9 +31,9 @@ jobs:
           host: ${{ secrets.VM_HOST }}
           username: ${{ secrets.VM_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.VM_PORT }} # 默认是 22，如果不是，需要在 Secrets 中设置
-          source: "./dist/*" # 或者 Astro 打包后的目录
-          target: "/path/to/virtual/machine/directory"
+          port: ${{ secrets.VM_PORT }}
+          source: "./dist/*"
+          target: "/root/blog"
 
       - name: Reload NGINX
         uses: appleboy/ssh-action@master
