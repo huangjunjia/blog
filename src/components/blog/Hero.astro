@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import FormattedDate from "../FormattedDate.astro";
 
@@ -30,7 +31,7 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 		</div>
 	)
 }
-{data.draft ? <span class="text-base text-red-500"><草稿></span> : null}
+{data.draft ? <span class="text-base text-red-500">&lt;草稿&gt;</span> : null}
 <h1 class="title mb-3 sm:mb-1">
 	{data.title}
 </h1>
