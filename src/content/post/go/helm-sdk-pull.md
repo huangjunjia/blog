@@ -4,7 +4,6 @@ description: "Helm 官方提供了一个 go sdk，可以在 go 中自由的组�
 publishDate: "2024/3/5"
 updatedDate: "2024/3/15"
 tags: ["go", "helm"]
-draft: true
 ---
 
 ## 什么是 Helm pull？
