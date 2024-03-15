@@ -5,7 +5,7 @@ export const siteConfig: SiteConfig = {
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
 	author: "Jia",
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
-	title: "jia 技术小屋",
+	title: "Jia",
 	// Meta property used as the default description meta property
 	description: "一枚小前端的记录",
 	// HTML lang property, found in src/layouts/Base.astro L:18
@@ -37,7 +37,7 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 		path: "/about/",
 	},
 	{
-		title: "博文",
+		title: "文章",
 		path: "/posts/",
 	},
 ];

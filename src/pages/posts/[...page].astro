@@ -21,7 +21,7 @@ interface Props {
 const { page, uniqueTags } = Astro.props;
 
 const meta = {
-	title: "博文",
+	title: "文章",
 	description: "一堆不知道如何打标签的博文",
 };
 
@@ -29,20 +29,20 @@ const paginationProps = {
 	...(page.url.prev && {
 		prevUrl: {
 			url: page.url.prev,
-			text: `← 上一篇博文`,
+			text: `← 上一篇`,
 		},
 	}),
 	...(page.url.next && {
 		nextUrl: {
 			url: page.url.next,
-			text: `下一篇博文 →`,
+			text: `下一篇 →`,
 		},
 	}),
 };
 ---
 
 <PageLayout meta={meta}>
-	<h1 class="title mb-6">博文</h1>
+	<h1 class="title mb-6">文章</h1>
 	<div class="grid gap-y-16 sm:grid-cols-[3fr_1fr] sm:gap-x-8">
 		<section aria-label="Blog post list">
 			<ul class="space-y-8 text-start">
