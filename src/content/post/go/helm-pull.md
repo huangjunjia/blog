@@ -119,7 +119,7 @@ import (
   "helm.sh/helm/v3/pkg/registry"
 )
 
-function CreateConfig(settings *cli.EnvSettings) *action.Configuration {
+function createConfig(settings *cli.EnvSettings) *action.Configuration {
   logger := log.Default()
 
   config := new(action.Configuration)
