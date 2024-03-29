@@ -96,7 +96,7 @@ draft: false
 
 <div style="width: 100%; height: 36px; display: flex; align-items: center; gap: 8px">
   <img width="24px" height="24px" src="http://image.jia.ink/uPic/92c43ca6c30b997c.webp" alt="excel-icon">
-  <a style="text-decoration: none" target="_blank" href="https://www.xiaohongshu.com/explore/643f8ac10000000013002bd6?app_platform=ios&app_version=8.25.4&author_share=1&share_from_user_hidden=true&type=normal&xhsshare=WeixinSession&appuid=5b096e4cf7e8b925d4e0f534&apptime=1709813539">汕尾行程安排</a>
+  <a style="text-decoration: none" target="_blank" href="https://www.xiaohongshu.com/explore/643f8ac10000000013002bd6?app_platform=ios&app_version=8.25.4&author_share=1&share_from_user_hidden=true&type=normal&xhsshare=WeixinSession&appuid=5b096e4cf7e8b925d4e0f534&apptime=1709813539">深圳周末两日游，汕尾两天一夜美食最全攻略</a>
 </div>
 
 读书人的事，不能叫做抄 🐶
