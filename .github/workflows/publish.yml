@@ -34,14 +34,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.VM_PORT }}
           source: "./dist/*"
-          target: "/root/blog"
+          target: "/root/websites/nginx/web/blog"
           strip_components: 1
-
-      - name: Reload NGINX
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.VM_HOST }}
-          username: ${{ secrets.VM_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.VM_PORT }}
-          script: sudo nginx -s reload
