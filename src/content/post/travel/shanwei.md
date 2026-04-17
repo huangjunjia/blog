@@ -60,7 +60,7 @@ draft: false
 
 #### 上午安排
 
-下边是我 [@無名](https://jia.ink) 看到的美食推荐，我个人倾向于在各地找小吃、美食尝尝，感受当地人的饮食习惯，体会当地的风土人情，以下是视频列表，只是介绍的一部分。
+下边是我 [@無名](https://jia.red) 看到的美食推荐，我个人倾向于在各地找小吃、美食尝尝，感受当地人的饮食习惯，体会当地的风土人情，以下是视频列表，只是介绍的一部分。
 
 <iframe width="100%" height="300px" src="//player.bilibili.com/player.html?aid=964589406&bvid=BV1rH4y1k7vx&cid=1360626123&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
@@ -95,7 +95,7 @@ draft: false
 ### 小 🍠 攻略借鉴
 
 <div style="width: 100%; height: 36px; display: flex; align-items: center; gap: 8px">
-  <img width="24px" height="24px" src="http://image.jia.ink/uPic/92c43ca6c30b997c.webp" alt="excel-icon">
+  <img width="24px" height="24px" src="http://image.jia.red/uPic/92c43ca6c30b997c.webp" alt="excel-icon">
   <a style="text-decoration: none" target="_blank" href="https://www.xiaohongshu.com/explore/643f8ac10000000013002bd6?app_platform=ios&app_version=8.25.4&author_share=1&share_from_user_hidden=true&type=normal&xhsshare=WeixinSession&appuid=5b096e4cf7e8b925d4e0f534&apptime=1709813539">深圳周末两日游，汕尾两天一夜美食最全攻略</a>
 </div>
 

@@ -58,7 +58,8 @@ draft: false
   - nexus：生成接口类型描述和实现，以及自定义接口；
   - xstate：status machine，用于控制部份资源、操作状态扭转；
   - graphql compiler：常用于处理 nexus 生成的 graphql schema 和 prisma 所使用的 graphql schema 间差异或自定义；
-  - cronjob：用于实现定时任务。
+  - cronjob：用于实现定时任务；
+  - temporal：目前常用于编排 workflow。
 
 **工作内容**
 
@@ -127,6 +128,3 @@ draft: false
 - shell 脚本用于数据恢复，调用 k8s api-server 获取数据并通过 grep 和 cut 指令截取业务数据，并将数据清洗后通过 graphql api 写入对应的 db 中；
 - go 脚本实现服务升级包构建，通过 gitlab sdk 实现 gitlab 项目文件下载，使用 helm sdk 和 docker sdk 实现 helm charts 和 templates 生成、docker image 拉取和批量导出，使用 yaml sdk 和 json sdk 实现升级配置文件解析和生成，使用 http module 实现构建产物上传；
 - node 脚本实现微前端子项目脚手架快速构建，结合 commander 和 inquirer 实现指令、flags 解析和交互式输入，使用 ejs 实现模版变量替换和生成。
-
-
-
