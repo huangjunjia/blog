@@ -41,7 +41,7 @@ my-lerna-repo/
 
 使用 `lerna init --independent` 初始化工程，或者将 `lerna.json` 的 version 字段修改为 `version: "independent"` ，每次publish时，您都将得到一个提示符，提示每个已更改的包，以指定是补丁、次要更改、主要更改还是自定义更改。
 
-![Image](https://image.junjia.fun/uPic/hVDij2.png)
+![Image](https://image.jia.red/uPic/hVDij2.png)
 
 ## 初始化
 
